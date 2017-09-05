@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title><link rel="stylesheet" href="css/dafeiji.css"><script src="js/base.js"></script><script src="js/common.js"></script><script src="js/gameEngine.js"></script><script src="js/myPlane.js"></script><script src="js/bullet.js"></script><script src="js/enemy.js"></script><script src="js/ajax.js"></script></head><body><script>window.onload =function () {
+        let oList = document.getElementById("list");
+        let aList = oList.getElementsByTagName("li");
+        for(let i=0;i<aList.length;i++){
+            aList[i].onclick = function () {
+                oList.parentNode.removeChild(oList);
+                //发射时间间隔
+                myPlane().frieInter = this.value - 0;
+                //游戏初始化开始游戏
+                gameEngine.init().start();
+            }
+        }
+    }</script><div id="main" class="main"><ul id="list"><li value="1000">超级困难</li><li value="500">非常困难</li><li value="300">比较困难</li><li value="100">开挂了你</li></ul></div></body></html>
